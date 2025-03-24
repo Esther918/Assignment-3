@@ -1,4 +1,4 @@
-from finiteelementanalysis import discretization as di
+from FiniteElementAnalysis import discretization as di
 import numpy as np
 import matplotlib.pyplot as plt
 
