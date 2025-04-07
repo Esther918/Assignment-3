@@ -50,9 +50,11 @@ python partB.py
 * Stretching 100% of a single layer of elastin network:
 
 L = 100.0     
-H = 2.0       
+H = 10.0
+
+BC: circular ends
 nx = 50      
-ny = 2           
+ny = 4           
 ele_type = "D2_nn3_tri"
 ndof = 2
 
