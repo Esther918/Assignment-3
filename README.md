@@ -35,7 +35,7 @@ From full_code_example_2.py
 L = 15.0   
 H = 1.0    
 nx = 60    
-ny = 2     
+ny = 4     
 ele_type = "D2_nn8_quad" 
 ndof = 2
 * Material properties:
