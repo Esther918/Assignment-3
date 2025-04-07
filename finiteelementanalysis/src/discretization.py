@@ -1051,7 +1051,7 @@ def get_face_nodes_D1_nn3(face: int):
     of a mid-node doesn't typically introduce new boundaries. For consistency, 
     you could define:
       - face=0 => left end node [0]
-      - face=1 => right end node [2]
+      - face=1 => right end node [1]
 
     Alternatively, if you consider each node a separate "face," then 
     you'd have 3 faces: face=0 -> [0], face=1 -> [1], face=2 -> [2]. 
@@ -1072,7 +1072,7 @@ def get_face_nodes_D1_nn3(face: int):
     """
     faces_map = {
         0: [0],
-        1: [2],
+        1: [1],
     }
     if face not in faces_map:
         raise ValueError("D1_nn3 has faces=0..1 only (end nodes).")

@@ -1,6 +1,8 @@
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 from finiteelementanalysis import discretization as di
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 def interpolate_field_natural_coords_single_element(ele_type, node_values, xi_vals, eta_vals):
@@ -57,7 +59,7 @@ def interpolate_field_natural_coords_single_element(ele_type, node_values, xi_va
         xi = xi_vals[i]
         eta = eta_vals[i]
         N = shape_function(np.asarray([xi, eta]))
-        interpolated_vals[i] = np.dot(N.T, node_values)
+        interpolated_vals[i] = np.dot(N.T, node_values).item()
 
     return interpolated_vals.reshape((-1, 1))
 
@@ -91,7 +93,7 @@ def plot_interpolate_field_natural_coords_single_element(fname: str, ele_type: s
         mask = XI + ETA <= 1  # Valid points inside the triangle
         xi_filtered = XI[mask].flatten()
         eta_filtered = ETA[mask].flatten()
-        ref_nodes = np.array([[0, 0], [1, 0], [0, 1]]) if ele_type == "D2_nn3_tri" else np.array([[0, 0], [1, 0], [0, 1], [0.5, 0.5], [0, 0.5], [0.5, 0]])
+        ref_nodes = np.array([[1, 0], [0, 1], [0, 0]]) if ele_type == "D2_nn3_tri" else np.array([[1, 0], [0, 1], [0, 0], [0.5, 0.5], [0, 0.5], [0.5, 0]])
     
     elif ele_type in ["D2_nn4_quad", "D2_nn8_quad"]:
         xi_vals = np.linspace(-1, 1, num_interp_pts)
@@ -112,7 +114,7 @@ def plot_interpolate_field_natural_coords_single_element(fname: str, ele_type: s
     
     # Plot element boundaries
     if ele_type in ["D2_nn3_tri", "D2_nn6_tri"]:
-        tri_nodes = np.array([[0, 0], [1, 0], [0, 1], [0, 0]])  # Reference triangle
+        tri_nodes = np.array([[1, 0], [0, 1], [0, 0], [1, 0]])  # Reference triangle
         plt.plot(tri_nodes[:, 0], tri_nodes[:, 1], 'k-', lw=2)
     elif ele_type in ["D2_nn4_quad", "D2_nn8_quad"]:
         quad_nodes = np.array([[-1, -1], [1, -1], [1, 1], [-1, 1], [-1, -1]])  # Reference quad
@@ -126,7 +128,7 @@ def plot_interpolate_field_natural_coords_single_element(fname: str, ele_type: s
     plt.ylabel("η (Natural Coordinate)")
     plt.title(f"Interpolated Field for {ele_type}")
     plt.savefig(fname, dpi=300)
-
+    plt.close()
     return
 
 
@@ -160,7 +162,7 @@ def visualize_isoparametric_mapping_single_element(fname: str, ele_type, node_co
         mask = XI + ETA <= 1  # Filter points inside the reference triangle
         xi_filtered = XI[mask]
         eta_filtered = ETA[mask]
-        ref_nodes = np.array([[0, 0], [1, 0], [0, 1]]) if ele_type == "D2_nn3_tri" else np.array([[0, 0], [1, 0], [0, 1], [0.5, 0.5], [0, 0.5], [0.5, 0]])
+        ref_nodes = np.array([[1, 0], [0, 1], [0, 0]]) if ele_type == "D2_nn3_tri" else np.array([[1, 0], [0, 1], [0, 0], [0.5, 0.5], [0, 0.5], [0.5, 0]])
 
     elif ele_type in ["D2_nn4_quad", "D2_nn8_quad"]:
         xi_vals = np.linspace(-1, 1, num_interp_pts)
@@ -206,7 +208,7 @@ def visualize_isoparametric_mapping_single_element(fname: str, ele_type, node_co
 
     plt.tight_layout()
     plt.savefig(fname, dpi=300)
-
+    plt.close()
     return
 
 
@@ -432,11 +434,11 @@ def visualize_gauss_pts(fname, ele_type, num_pts):
     
     # Define reference element nodes in natural coordinates
     if ele_type == "D2_nn3_tri":
-        nodes = np.array([[0, 0], [1, 0], [0, 1]])  # Reference triangle
+        nodes = np.array([[1, 0], [0, 1], [0, 0]])  # Reference triangle
         edges = [[0, 1], [1, 2], [2, 0]]
     elif ele_type == "D2_nn6_tri":
-        nodes = np.array([[0, 0], [1, 0], [0, 1], [0.5, 0.5], [0, 0.5], [0.5, 0]])  # Quadratic triangle
-        edges = [[0, 1], [1, 3], [3, 2], [2, 4], [4, 0], [0, 5], [5, 1]]
+        nodes = np.array([[1, 0], [0, 1], [0, 0], [0.5, 0.5], [0, 0.5], [0.5, 0]])  # Quadratic triangle
+        edges = [[0, 3], [3, 1], [1, 4], [4, 2], [2, 5], [5, 0]]
     elif ele_type == "D2_nn4_quad":
         nodes = np.array([[-1, -1], [1, -1], [1, 1], [-1, 1]])  # Reference quadrilateral
         edges = [[0, 1], [1, 2], [2, 3], [3, 0]]
@@ -469,6 +471,7 @@ def visualize_gauss_pts(fname, ele_type, num_pts):
     ax.set_aspect('equal')
     
     plt.savefig(fname, dpi=300)
+    plt.close()
     return
 
 
