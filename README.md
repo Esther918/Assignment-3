@@ -65,7 +65,7 @@ Creating an ill conditioned K
 
 
 
-High-level overview schematic diagram of the code:
+## High-level overview schematic diagram of the code:
 ![overview](overview.jpg)
 
 * pre_process: Generates mesh and labels boundaries.
