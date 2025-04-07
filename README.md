@@ -60,8 +60,7 @@ ndof = 2
 ```bash
 python partC.py
 ```
-Creating an ill conditioned K  
-* A very thinand long structure.
+* A very thin and long structure.
 * The huge difference between shear modulus and bulk modulus worsens conditioning.
 * Improper mesh size:  
 d_displacement = spla.spsolve(K_sparse, R)
