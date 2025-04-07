@@ -28,7 +28,7 @@ tutorials_dir = Path(__file__).parent
 L = 15.0   # length in x
 H = 1.0    # height in y
 nx = 60    # number of elements along length
-ny = 2     # number of elements along height
+ny = 4     # number of elements along height
 
 ele_type = "D2_nn8_quad"  # 2D, 8-node quadrilateral (linear)
 ndof = 2                  # 2 DOFs per node (x, y)
