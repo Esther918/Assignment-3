@@ -66,7 +66,9 @@ python partC.py
 Creating an ill conditioned K
 * A very thinand long structure.
 * The huge difference between shear modulus and bulk modulus worsens conditioning.
-* Increase lambda_target and reduce load steps.
+* Improper mesh size:  
+d_displacement = spla.spsolve(K_sparse, R)
+Iteration 1, Correction=0.000000e+00, Residual=nan, tolerance=1.000000e-08
 
 
 
