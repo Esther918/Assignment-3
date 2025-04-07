@@ -32,6 +32,7 @@ python partA.py
 ```
 From full_code_example_2.py
 * Beam geometry:
+
 L = 15.0   
 H = 1.0    
 nx = 60    
@@ -47,6 +48,7 @@ nu = 0.3
 python partB.py
 ```
 * Stretching 100% of a single layer of elastin network:
+
 L = 100.0     
 H = 2.0       
 nx = 50      
