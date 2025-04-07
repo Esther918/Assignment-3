@@ -19,7 +19,7 @@ ndof = 2
 L = 100.0      # length in x-direction
 H = 10.0        # height in y-direction
 nx = 50        # number of elements in x
-ny = 5         # number of elements in y
+ny = 4         # number of elements in y
 
 # Prescribed stretch 100% extension
 lambda_target = 2
