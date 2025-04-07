@@ -53,6 +53,7 @@ L = 100.0
 H = 10.0
 
 BC: circular ends
+
 nx = 50      
 ny = 4           
 ele_type = "D2_nn3_tri"
