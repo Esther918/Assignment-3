@@ -31,8 +31,7 @@ pytest -v --cov=finiteelementanalysis --cov-report term-missing
 python partA.py
 ```
 From full_code_example_2.py
-* Beam geometry:
-
+* Beam geometry:  
 L = 15.0   
 H = 1.0    
 nx = 60    
@@ -47,23 +46,21 @@ nu = 0.3
 ```bash
 python partB.py
 ```
-* Stretching 100% of a single layer of elastin network:
-
+* Stretching 100% of a single layer of elastin network:  
 L = 100.0     
-H = 10.0
-
-BC: circular ends
-
-nx = 50      
-ny = 5           
-ele_type = "D2_nn3_tri"
+H = 20.0  
+BC: circular ends  
+nx = 25      
+ny = 4  
+h-refinement: ele_type = "D2_nn3_tri"  
+p-refinement: ele_type = "D2_nn6_tri"   
 ndof = 2
 
 **Part C**
 ```bash
 python partC.py
 ```
-Creating an ill conditioned K
+Creating an ill conditioned K  
 * A very thinand long structure.
 * The huge difference between shear modulus and bulk modulus worsens conditioning.
 * Improper mesh size:  
