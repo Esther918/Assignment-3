@@ -55,7 +55,7 @@ H = 10.0
 BC: circular ends
 
 nx = 50      
-ny = 4           
+ny = 5           
 ele_type = "D2_nn3_tri"
 ndof = 2
 
