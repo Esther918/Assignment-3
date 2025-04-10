@@ -56,8 +56,8 @@ H = 20.0
 BC: circular ends  
 nx = 25      
 ny = 4  
-h-refinement: ele_type = "D2_nn3_tri"  
-p-refinement: ele_type = "D2_nn6_tri"   
+Note: see error_vs_mesh_size_h_vs_p_refinement.png for convergence with respect to mesh size.
+![error](error_vs_mesh_size_h_vs_p_refinement.png)  
 
 **Part C**
 ```bash
