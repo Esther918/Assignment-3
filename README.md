@@ -57,7 +57,7 @@ BC: circular ends
 nx = 25      
 ny = 4  
 Note: see error_vs_mesh_size_h_vs_p_refinement.png for convergence with respect to mesh size.
-![error](error_vs_mesh_size_h_vs_p_refinement.png)  
+![error](finiteelementanalysis/tutorials/error_vs_mesh_size_h_vs_p_refinement.png)  
 
 **Part C**
 ```bash
