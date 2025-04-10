@@ -72,9 +72,13 @@ Iteration 1, Correction=0.000000e+00, Residual=nan, tolerance=1.000000e-08
 
 
 ## High-level overview schematic diagram of the code:
-![overview](overview.jpg)
+![workflow](workflow.jpg)
 
 * pre_process: Generates mesh and labels boundaries.
-* pre_process_demo_helper_fcns: Plot the mesh.
+  Structured meshes: generate_rect_mesh_2d for quads and triangles.
+  Boundary Identification: identify_rect_boundaries labels nodes and faces on domain edges.  
+* pre_process_demo_helper_fcns: Plot the mesh and field errors..  
+  Mesh Visualization: plot_mesh_2D with nodes/elements/Gauss points.  
+  Interpolation: interpolate_scalar_to_gauss_pts for nodal to Gauss point values.  
 * local_element: Computes element stiffness and residual using shape functions from discretization.
 * assemble_global: Turns element matrices from local_element into global system.
