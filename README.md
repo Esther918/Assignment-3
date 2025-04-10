@@ -41,6 +41,10 @@ ndof = 2
 * Material properties:
 E = 76000.0
 nu = 0.3
+*  Comparison to an analytical solution  
+Numerical = -0.009110  
+Analytical = -0.009093  
+Absolute error = 1.732997e-05  
 
 **Part B**
 ```bash
@@ -54,7 +58,6 @@ nx = 25
 ny = 4  
 h-refinement: ele_type = "D2_nn3_tri"  
 p-refinement: ele_type = "D2_nn6_tri"   
-ndof = 2
 
 **Part C**
 ```bash
