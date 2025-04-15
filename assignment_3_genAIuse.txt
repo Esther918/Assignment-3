@@ -1,0 +1,3 @@
+Deepseek was used in this assigmnent. 
+I used DeepSeek to double check my understanding of the code's workflow. 
+Deepseek helped me debug the meshing of the circular ends in Part B.
